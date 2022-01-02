@@ -13,16 +13,16 @@ users = [
 def auth_user(username, password, list_of_users)
     list_of_users.each do |user_record|
         if user_record[:username] == username && user_record[:password] == password
-            return "the username is #{user_record[:username]} and the password is #{user_record[:password].reverse}".green
+            return "\xF0\x9F\x91\xBDthe username is #{user_record[:username]} and the password is #{user_record[:password].reverse}\xF0\x9F\x91\xBD".green.capitalize
         end
     end
-    "Credentials were not correct".red
+    "\xF0\x9F\x90\x9ECredentials were not correct\xF0\x9F\x90\x9E".red
 end
 
 # program execution flow
 puts
-puts "Welcome to the authenticator"
-80.times {print "-*".blue}
+puts 	"\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80 Welcome to the authenticator \xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80\xF0\x9F\x9A\x80"	
+80.times {print "\xE2\x9A\xA1".yellow}
 puts
 puts "This program will take the input from the user ad compare password"
 puts "If password is correct, you will get back the user object"
@@ -41,4 +41,4 @@ while attempts < 4
     attempts += 1
 end
 
-puts "You have exceeded the number of attempts".red
+puts "\xF0\x9F\x94\xB4You have exceeded the number of attempt\xF0\x9F\x94\xB4".red
